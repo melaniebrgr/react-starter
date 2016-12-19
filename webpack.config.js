@@ -1,14 +1,14 @@
-var HTMLWebpackPlugin = require('html-webpack-plugin');
-var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
-  template: __dirname + '/app/index.html',
-  filename: 'index.html',
-  inject: 'body'
-});
+var HTMLWebpackPlugin = require('html-webpack-plugin'); //generate HTML file that includes webpack bundle(s) 
+var ExtractTextPlugin = require('extract-text-webpack-plugin'); //extract CSS
 
 module.exports = {
   entry: [
     __dirname + '/app/index.js'
   ],
+  output: {
+    filename: 'bundle.js',
+    path: __dirname + '/build'
+  },
   module: {
     loaders: [
       {
@@ -19,13 +19,17 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loader: 'style-loader!css-loader!sass-loader'        
+        loader: ExtractTextPlugin.extract(
+          "style",
+          "css!sass") 
       }
     ]
-  },
-  output: {
-    filename: 'bundle.js',
-    path: __dirname + '/build'
-  },
-  plugins: [HTMLWebpackPluginConfig]
+  },  
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: __dirname + '/app/index.html',
+      inject: 'body'
+    }),
+    new ExtractTextPlugin("styles.css")
+  ]
 };

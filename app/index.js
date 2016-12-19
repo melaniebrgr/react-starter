@@ -1,8 +1,9 @@
+// index.js
+
 var React = require('react');
 var ReactDOM = require('react-dom');
-var App = require('./components/App');
-
-require('./scss/app.scss');
+var App = require('./components/app');
+require('./scss/index.scss');
 
 ReactDOM.render(
   <App />,
