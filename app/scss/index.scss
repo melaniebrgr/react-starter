@@ -1,7 +1,11 @@
 // index.scss
 
-@import 'variables';
+// Base
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/presets';
 
-body {
-    background-color: $main-color;
-}
+// Elements
+@import 'elements/headings';
+
+// Components
