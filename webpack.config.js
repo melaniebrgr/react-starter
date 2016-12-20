@@ -22,6 +22,11 @@ module.exports = {
         loader: ExtractTextPlugin.extract(
           "style-loader",
           "css-loader!postcss-loader!sass-loader") 
+      },
+      {
+        test: /\.(png|jpg)$/i,
+        exclude: /node_modules/,
+        loader: 'url-loader?limit=10000'
       }
     ]
   },
