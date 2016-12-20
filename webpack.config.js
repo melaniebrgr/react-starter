@@ -20,11 +20,11 @@ module.exports = {
         test: /\.scss$/,
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract(
-          "style",
-          "css!sass") 
+          "style-loader",
+          "css-loader!postcss-loader!sass-loader") 
       }
     ]
-  },  
+  },
   plugins: [
     new HTMLWebpackPlugin({
       template: __dirname + '/app/index.html',
