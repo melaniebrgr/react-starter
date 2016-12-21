@@ -4,9 +4,9 @@
   "description": "Starter kit for react apps",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server --inline",
-    "watch": "webpack --watch"
+    "build": "webpack -d",
+    "start": "webpack-dev-server -d --inline",
+    "watch": "webpack -d --watch"
   },
   "keywords": [
     "react",
