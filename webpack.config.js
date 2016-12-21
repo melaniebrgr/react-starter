@@ -23,10 +23,9 @@ module.exports = {
           "style-loader",
           "css-loader!postcss-loader!sass-loader") 
       },
-      {
-        test: /\.(png|jpg)$/i,
+      { test: /\.(jpe?g|png|gif|svg)$/i, 
         exclude: /node_modules/,
-        loader: 'url-loader?limit=10000'
+        loader: 'url?limit=10000!img?minimize' 
       }
     ]
   },
