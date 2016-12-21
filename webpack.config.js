@@ -20,8 +20,8 @@ module.exports = {
         test: /\.scss$/,
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract(
-          "style-loader",
-          "css-loader!postcss-loader!sass-loader") 
+          "style",
+          "css!postcss!sass") 
       },
       { test: /\.(jpe?g|png|gif|svg)$/i, 
         exclude: /node_modules/,
