@@ -3,7 +3,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'); //extract CSS
 
 module.exports = {
   entry: [
-    __dirname + '/app/index.js'
+    __dirname + '/app/index.jsx'
   ],
   output: {
     filename: 'bundle.js',
@@ -12,9 +12,9 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel'
       },
       {
         test: /\.scss$/,
