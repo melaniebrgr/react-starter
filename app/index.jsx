@@ -7,6 +7,6 @@ import App from './components/app.jsx';
 require('./scss/index.scss');
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('app')
+  <App title="My React Starter App" />,
+  document.getElementById('root')
 );
